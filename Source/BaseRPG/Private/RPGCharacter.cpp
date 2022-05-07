@@ -30,5 +30,44 @@ void ARPGCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompon
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+	PlayerInputComponent->BindAction("Sprint", IE_Pressed, this, &ARPGCharacter::Sprint);
+	PlayerInputComponent->BindAction("Sprint", IE_Released, this, &ARPGCharacter::StopSprint);
+
+	PlayerInputComponent->BindAction("Attack", IE_Pressed, this, &ARPGCharacter::Attack);
+	
+	PlayerInputComponent->BindAxis("MoveForward", this, &ARPGCharacter::MoveForward);
+	PlayerInputComponent->BindAxis("MoveRight", this, &ARPGCharacter::MoveRight);
+	
+	PlayerInputComponent->BindAxis("Turn", this, &ARPGCharacter::Turn);
+	PlayerInputComponent->BindAxis("LookUp", this, &ARPGCharacter::LookUp);
+
+}
+
+void ARPGCharacter::MoveForward(float Value)
+{
+}
+
+void ARPGCharacter::MoveRight(float Value)
+{
+}
+
+void ARPGCharacter::Turn(float Value)
+{
+}
+
+void ARPGCharacter::LookUp(float Value)
+{
+}
+
+void ARPGCharacter::Sprint()
+{
+}
+
+void ARPGCharacter::StopSprint()
+{
+}
+
+void ARPGCharacter::Attack()
+{
 }
 
