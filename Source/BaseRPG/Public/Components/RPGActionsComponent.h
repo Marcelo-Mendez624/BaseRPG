@@ -59,7 +59,7 @@ public:
 	 * @params ActionName Name of the action to start
 	 */
 	UFUNCTION(BlueprintCallable, Category = "Actions")
-	AActor* StartActionByName(AActor* Instigator, FName ActionName);
+	bool StartActionByName(AActor* Instigator, FName ActionName);
 
 	/*
 	 * Start action

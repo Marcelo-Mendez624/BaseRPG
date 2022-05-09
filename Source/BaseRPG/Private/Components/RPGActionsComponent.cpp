@@ -56,7 +56,7 @@ void URPGActionsComponent::RemoveAction(URPGBaseAction* ActionToRemove)
 	Actions.Remove(ActionToRemove);
 }
 
-AActor* URPGActionsComponent::StartActionByName(AActor* Instigator, FName ActionName)
+bool URPGActionsComponent::StartActionByName(AActor* Instigator, FName ActionName)
 {
 	for(URPGBaseAction* Action : Actions)
 	{
@@ -71,9 +71,11 @@ AActor* URPGActionsComponent::StartActionByName(AActor* Instigator, FName Action
 			}
 			
 			Action->StartAction(Instigator);
+			return true;
 		}
 	}
-	return Instigator;
+	
+	return false;
 }
 
 void URPGActionsComponent::StopActionByName( FName ActionName)

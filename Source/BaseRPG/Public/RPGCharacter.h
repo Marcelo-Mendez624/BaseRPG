@@ -23,18 +23,11 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	
 	// Functions
 protected:
 	void MoveForward(float Value);
 	void MoveRight(float Value);
-	void Turn(float Value);
-	void LookUp(float Value);
-
-	void Sprint();
-	void StopSprint();
-	
-	void Attack();
-
 	
 	// Components
 protected:
@@ -50,6 +43,7 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	URPGStatsComponent* StatsComponent;
 
+	//Getters
 public:
 	URPGStatsComponent* GetStatsComponent() const { return  StatsComponent; }
 	

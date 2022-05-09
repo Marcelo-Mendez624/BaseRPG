@@ -20,10 +20,16 @@ class BASERPG_API URPGBaseAction : public UObject
 protected:
 	UFUNCTION(BlueprintCallable, Category = "Action")
 	URPGActionsComponent* GetOwningComponent() const;
-	
+
+	/*
+	 * Tags to add when the action start
+	 */
 	UPROPERTY(EditDefaultsOnly, Category = "Tags")
 	FGameplayTagContainer GrantsTags;
-	
+
+	/*
+	 * tags to block when action is running
+	 */
 	UPROPERTY(EditDefaultsOnly, Category = "Tags")
 	FGameplayTagContainer BlockedTags;
 
@@ -35,13 +41,20 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Action")
 	bool IsRunning() const;
-	
+
+	/*
+	 * Check if the action can start
+	 * @params Instigator Action instigator
+	 */
 	UFUNCTION(BlueprintNativeEvent, Category = "Actions")
 	bool CanStartAction(AActor* Instigator);
 	
 	UFUNCTION(BlueprintNativeEvent, Category = "Actions")
 	void StartAction(AActor* Instigator);
-	
+
+	/*
+	 * Stop Action
+	 */
 	UFUNCTION(BlueprintNativeEvent, Category = "Actions")
 	void StopAction();
 
