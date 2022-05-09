@@ -9,6 +9,7 @@
 class UCameraComponent;
 class USpringArmComponent;
 class URPGStatsComponent;
+class URPGActionsComponent;
 
 UCLASS()
 class BASERPG_API ARPGCharacter : public ACharacter
@@ -18,16 +19,7 @@ class BASERPG_API ARPGCharacter : public ACharacter
 public:
 	// Sets default values for this character's properties
 	ARPGCharacter();
-
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-
 	
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
@@ -52,8 +44,8 @@ protected:
 	UPROPERTY(VisibleAnywhere, Category = "Camera")
 	UCameraComponent* Camera;
 
-	// UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
-	// UCharacterActionsComponent* ActionsComponent;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+	URPGActionsComponent* ActionsComponent;
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	URPGStatsComponent* StatsComponent;

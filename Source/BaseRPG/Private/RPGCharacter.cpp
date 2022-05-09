@@ -3,26 +3,18 @@
 
 #include "BaseRPG/Public/RPGCharacter.h"
 
+#include "Components/RPGActionsComponent.h"
+#include "Components/RPGStatsComponent.h"
+
 // Sets default values
 ARPGCharacter::ARPGCharacter()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bCanEverTick = false;
 
-}
-
-// Called when the game starts or when spawned
-void ARPGCharacter::BeginPlay()
-{
-	Super::BeginPlay();
+	ActionsComponent = CreateDefaultSubobject<URPGActionsComponent>(TEXT("Actions Component"));
 	
-}
-
-// Called every frame
-void ARPGCharacter::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
+	StatsComponent = CreateDefaultSubobject<URPGStatsComponent>(TEXT("Stas Component"));
 }
 
 // Called to bind functionality to input
@@ -45,6 +37,7 @@ void ARPGCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompon
 
 void ARPGCharacter::MoveForward(float Value)
 {
+	
 }
 
 void ARPGCharacter::MoveRight(float Value)
@@ -56,18 +49,6 @@ void ARPGCharacter::Turn(float Value)
 }
 
 void ARPGCharacter::LookUp(float Value)
-{
-}
-
-void ARPGCharacter::Sprint()
-{
-}
-
-void ARPGCharacter::StopSprint()
-{
-}
-
-void ARPGCharacter::Attack()
 {
 }
 
