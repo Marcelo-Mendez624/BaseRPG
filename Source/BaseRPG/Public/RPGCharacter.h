@@ -45,7 +45,13 @@ protected:
 
 	//Getters
 public:
+	UCameraComponent* GetCameraComponent() const { return Camera; }
+	
+	UFUNCTION(BlueprintCallable)
 	URPGStatsComponent* GetStatsComponent() const { return  StatsComponent; }
+
+	UFUNCTION(BlueprintCallable)
+	URPGActionsComponent* GetActionsComponent() const { return ActionsComponent; }
 	
 	
 };
